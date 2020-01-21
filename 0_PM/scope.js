@@ -11,17 +11,36 @@
  *        console logs.
  */
 
-function x() {
-  var a;
+const x = () => {
+  let a = 2;
   console.log(a);
 }
 
-function y() {
-  var a = 2;
+const y = () => {
+  let a = 2;
   console.log(a);
   x();
 }
 
-var a = 1;
+let a = 1;
 console.log(a);
 y();
+
+
+/**
+ * Part 1:
+ * 
+ * will print
+ * 1
+ * 2
+ * undefined
+ * (bc x() reinitializes a w/out setting a value)
+ * 
+ * if delete line 15, will print
+ * 1
+ * 2
+ * 1
+ * (bc the the a in function y is a local variable)
+ * 
+ */
+

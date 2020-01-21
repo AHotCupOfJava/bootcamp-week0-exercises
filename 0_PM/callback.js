@@ -19,3 +19,11 @@ const getUser = callback => {
   };
   callback(user);
 };
+
+const answer = didWin => (didWin) ? console.log('Your guess was correct!') : console.log('Your guess was wrong :(');
+
+const userGuess = user => {
+  coinToss(user.guess, answer);
+}
+
+getUser(userGuess);
